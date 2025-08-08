@@ -4,7 +4,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
-import Portfolio from "./pages/portfolio";
+import Portfolio from "./pages/Portfolio";
 const App: React.FC = () => {
   return (
     <>
