@@ -20,7 +20,7 @@ const About: React.FC = () => {
               loading="lazy"
               className=" w-full h-auto"
               src="/Images/Porfile.jpeg"
-              alt=""
+              alt="Abderhaman Image"
             />
           </motion.div>
           <motion.div
