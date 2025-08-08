@@ -44,19 +44,19 @@ const Portfolio: React.FC = () => {
     <>
       <section
         id="portfolio"
-        className="portfolio-section  w-full h-[100%] bg-[var(--bg-color)]  relative !z-0 overflow-hidden md:!pt-20"
+        className="portfolio-section  w-full h-full bg-[var(--bg-color)]  relative !z-0  md:!pt-20"
       >
-        <div className="portfolio-section-container !p-8">
+        <div className="portfolio-section-container h-auto !p-8">
           <div className="portfolio-section-slogan">
             <h2 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full text-[var(--third-color)]">
               Portfolio
             </h2>
           </div>
-          <div className="portfolio-section-container-cards !p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="portfolio-section-container-cards w-full h-full !py-4   md:!p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="portfolio-section-container-cards-card bg-[#161B22] !p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
+                className="portfolio-section-container-cards-card w-full bg-[#161B22] !p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
               >
                 <div className="portfolio-section-container-cards-card-image h-[200px]  hover:brightness-50  rounded-md">
                   <a href={project.projectLinkonWebsite}>
@@ -73,7 +73,7 @@ const Portfolio: React.FC = () => {
                     {project.projectTechnologies.map((tech, index) => (
                       <nav
                         key={index}
-                        className="bg-[var(--bg-color)] rounded-full !p-2"
+                        className="bg-[var(--bg-color)] rounded-full text-wrap !p-2"
                       >
                         <p className="text-[var(--third-color)] text-[.6rem]">
                           {tech}
@@ -88,19 +88,19 @@ const Portfolio: React.FC = () => {
                     </h3>
                     <div className="portfolio-section-container-cards-card-icons flex items-center gap-4">
                       <a
-                        className="w-8 h-8 p-2 bg-[var(--third-color)] rounded-full flex items-center justify-center"
+                        className="md:w-8 md:h-8 w-6 h-6 p-2 bg-[var(--third-color)] rounded-full flex items-center justify-center"
                         href={project.projectLinkonGithub}
                       >
                         {cloneElement(<FaGithubAlt />, {
-                          className: "text-3xl text-[#161B22]",
+                          className: "md:text-3xl text-2xl text-[#161B22]",
                         })}
                       </a>
                       <a
-                        className="w-8 h-8 p-2 bg-[var(--third-color)] rounded-full flex items-center justify-center"
+                        className="md:w-8 md:h-8  w-6 h-6 p-2 bg-[var(--third-color)] rounded-full flex items-center justify-center"
                         href={project.projectLinkonWebsite}
                       >
                         {cloneElement(<BiSolidShow />, {
-                          className: "text-3xl text-[#161B22]",
+                          className: "md:text-3xl text-2xl text-[#161B22]",
                         })}
                       </a>
                     </div>

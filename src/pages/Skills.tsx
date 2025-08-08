@@ -35,14 +35,14 @@ const Skills: React.FC = () => {
     <>
       <section
         id="skills"
-        className="skills-section w-full h-full  relative !z-0  md:!p-16 !p-5 "
+        className="skills-section w-full h-auto  relative !z-0  md:!p-16 !p-5 "
       >
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
           viewport={{ once: false, amount: 0.2 }}
-          className="skills-section-container cursor-no-drop  w-full  lg:h-full h-auto bg-[#161B22]  overflow-hidden !p-8 rounded-md"
+          className="skills-section-container cursor-no-drop  w-full  lg:h-full h-auto bg-[#161B22]  overflow-hidden  !p-8 rounded-md"
         >
           <div className="skills-section-slogan">
             <h2 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full  text-[var(--sixth-color)]">
