@@ -16,11 +16,7 @@ const About: React.FC = () => {
             viewport={{ once: false, amount: 0.2 }}
             className="about-container-content-profile-image w-full overflow-hidden h-full md:h-auto border-2 border-[var(--second-color)] flex items-center justify-center !p-1  rounded-lg "
           >
-            <img
-              className=" w-full h-auto"
-              src="/public/Images/Porfile.jpeg"
-              alt=""
-            />
+            <img className=" w-full h-auto" src="/Images/Porfile.jpeg" alt="" />
           </motion.div>
           <motion.div
             initial={{ x: 100, opacity: 0 }}

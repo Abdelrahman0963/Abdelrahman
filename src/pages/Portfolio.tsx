@@ -13,7 +13,7 @@ const Portfolio: React.FC = () => {
 
   const projects: projects[] = [
     {
-      projectImage: "/public/Projects Images/instagram.png",
+      projectImage: "/Projects Images/instagram.png",
       projectName: "Instagram Donwloader",
       projectLinkonGithub:
         "https://github.com/Abdelrahman0963/Video-Downloader.git",
@@ -22,7 +22,7 @@ const Portfolio: React.FC = () => {
       projectTechnologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     },
     {
-      projectImage: "/public/Projects Images/Crud.png",
+      projectImage: "/Projects Images/Crud.png",
       projectName: "CRUD Operation",
       projectLinkonGithub:
         "https://github.com/Abdelrahman0963/CRUD-Operation--System.git",
@@ -31,7 +31,7 @@ const Portfolio: React.FC = () => {
       projectTechnologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     },
     {
-      projectImage: "/public/Projects Images/Foton.png",
+      projectImage: "/Projects Images/Foton.png",
       projectName: "clone Home page",
       projectLinkonGithub:
         "https://github.com/Abdelrahman0963/task-foton-landing-Page.git",
@@ -39,7 +39,7 @@ const Portfolio: React.FC = () => {
       projectTechnologies: ["React", "Tailwind", "Motion"],
     },
     {
-      projectImage: "/public/Projects Images/Portfolio.png",
+      projectImage: "/Projects Images/Portfolio.png",
       projectName: "Portfolio",
       projectLinkonGithub: "https://github.com/Abdelrahman0963/Portfolio.git",
       projectLinkonWebsite: "https://abdelrahman0963.github.io/Portfolio/",
