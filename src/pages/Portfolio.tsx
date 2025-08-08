@@ -38,13 +38,6 @@ const Portfolio: React.FC = () => {
       projectLinkonWebsite: "https://task-foton-landing-page.vercel.app/",
       projectTechnologies: ["React", "Tailwind", "Motion"],
     },
-    {
-      projectImage: "/Projects Images/Portfolio.png",
-      projectName: "Portfolio",
-      projectLinkonGithub: "https://github.com/Abdelrahman0963/Portfolio.git",
-      projectLinkonWebsite: "https://abdelrahman0963.github.io/Portfolio/",
-      projectTechnologies: ["React", "Tailwind", "Motion"],
-    },
   ];
 
   return (
