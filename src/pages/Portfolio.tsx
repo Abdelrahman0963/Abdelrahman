@@ -61,6 +61,7 @@ const Portfolio: React.FC = () => {
                 <div className="portfolio-section-container-cards-card-image h-[200px]  hover:brightness-50  rounded-md">
                   <a href={project.projectLinkonWebsite}>
                     <img
+                      loading="lazy"
                       className="w-[100%] h-[100%] object-cover rounded-md"
                       src={project.projectImage}
                       alt={project.projectName}
