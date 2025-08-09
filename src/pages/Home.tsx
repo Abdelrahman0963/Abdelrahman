@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Home: React.FC = () => {
   function DownloadPDF() {
     const link = document.createElement("a");
-    link.href = "../../public/Resume/Abdelrahman Resume.pdf";
+    link.href = "/Resume/AbdelrahmanResume.pdf";
     link.download = "Abdelrahman Resume.pdf";
     link.click();
   }
