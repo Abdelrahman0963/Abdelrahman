@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
     <>
       <section
         id="contact"
-        className="footer-section w-full h-auto bg-[#161B22]    md:!pt-16"
+        className="footer-section w-full h-auto bg-[#161B22] overflow-hidden   md:!pt-16"
       >
         <div className="footer-container w-full md:h-auto h-full text-white flex-col md:flex-row flex gap-6 items-center justify-center md:justify-between md:!mb-0 !mb-15 !p-4 md:!p-8">
           <div className="footer-container-SocialLinks flex flex-col gap-4">
