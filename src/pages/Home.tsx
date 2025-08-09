@@ -5,7 +5,7 @@ const Home: React.FC = () => {
   function DownloadPDF() {
     const link = document.createElement("a");
     link.href = "/Resume/AbdelrahmanResume.pdf";
-    link.download = "Abdelrahman Resume.pdf";
+    link.download = "AbdelrahmanResume.pdf";
     link.click();
   }
   return (
