@@ -20,7 +20,7 @@ const Home: React.FC = () => {
           backgroundBlendMode: "overlay",
         }}
         id="home"
-        className="home-section w-full h-[100vh] bg-cover bg-center flex items-center  justify-center relative z-0 overflow-hidden "
+        className="home-section w-full h-[100vh] overflow-hidden bg-cover bg-center flex items-center  justify-center relative z-0 "
       >
         <div className="home-container w-full md:h-auto h-full text-white flex-col md:flex-row flex items-center justify-center md:justify-between md:!mb-0 !mb-15">
           <motion.div

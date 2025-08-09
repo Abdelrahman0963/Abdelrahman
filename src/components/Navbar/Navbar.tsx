@@ -7,7 +7,6 @@ const Navbar: React.FC = function () {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const navbarLinks = ["Home", "About", "Skills", "Portfolio", "Contact"];
-
   return (
     <>
       <motion.div
@@ -15,7 +14,7 @@ const Navbar: React.FC = function () {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: "-100%", opacity: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="navbar sticky top-6 h-[60px] bg-[#cfe9fe27] rounded-lg w-full flex items-center z-50 "
+        className="navbar fixed top-6 h-[60px] bg-[#cfe9fe27] rounded-lg md:w-[95%] w-[90%] flex items-center z-50 "
       >
         <div className="navbar-container relative  flex items-center w-full justify-between transform duration-500">
           <div className="navbar-logo w-72 xl:!px-10 lg:!px-8 !px-5">

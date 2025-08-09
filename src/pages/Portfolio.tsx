@@ -1,7 +1,7 @@
 import React, { cloneElement } from "react";
 import { BiSolidShow } from "react-icons/bi";
 import { FaGithubAlt } from "react-icons/fa";
-
+import { motion } from "framer-motion";
 const Portfolio: React.FC = () => {
   interface projects {
     projectImage: string;
@@ -54,9 +54,13 @@ const Portfolio: React.FC = () => {
           </div>
           <div className="portfolio-section-container-cards w-full h-full !py-4   md:!p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {projects.map((project, index) => (
-              <div
+              <motion.div
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, ease: "easeInOut" }}
+                viewport={{ once: false, amount: 0.2 }}
                 key={index}
-                className="portfolio-section-container-cards-card w-full bg-[#161B22] !p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
+                className="portfolio-section-container-cards-card overflow-hidden w-full bg-[#161B22] !p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
               >
                 <div className="portfolio-section-container-cards-card-image h-[200px]  hover:brightness-50  rounded-md">
                   <a href={project.projectLinkonWebsite}>
@@ -106,7 +110,7 @@ const Portfolio: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

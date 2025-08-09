@@ -6,9 +6,9 @@ const About: React.FC = () => {
     <>
       <section
         id="about"
-        className="about-section w-full h-[100%] bg-[var(--bg-color)]  relative !z-0 overflow-hidden md:!pt-20"
+        className="about-section w-full h-[100%] bg-[var(--bg-color)]  relative !z-0  md:!pt-20"
       >
-        <div className="about-container w-full h-auto flex md:flex-row flex-col items-center md:justify-between gap-10 md:!mb-5 !mb-0">
+        <div className="about-container w-full h-auto flex md:flex-row flex-col items-center md:justify-between overflow-hidden gap-10 md:!mb-5 !mb-0">
           <motion.div
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
