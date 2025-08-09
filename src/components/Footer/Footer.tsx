@@ -31,12 +31,12 @@ const Footer: React.FC = () => {
     {
       appName: "Linkedin",
       icon: <FaLinkedin />,
-      link: "www.linkedin.com/in/abdelrahman-sayed-8176082a8",
+      link: "//www.linkedin.com/in/abdelrahman-sayed-8176082a8",
     },
     {
       appName: "Github",
       icon: <FaGithubSquare />,
-      link: "https://github.com/Abdelrahman0963",
+      link: "//https://github.com/Abdelrahman0963",
     },
     {
       appName: "abdelrahman.sayed66006@gmail.com",

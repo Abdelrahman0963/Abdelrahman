@@ -48,9 +48,9 @@ const Portfolio: React.FC = () => {
       >
         <div className="portfolio-section-container h-auto !p-8">
           <div className="portfolio-section-slogan">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full text-[var(--third-color)]">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full text-[var(--third-color)]">
               Portfolio
-            </h2>
+            </h1>
           </div>
           <div className="portfolio-section-container-cards w-full h-full !py-4   md:!p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {projects.map((project, index) => (

@@ -30,9 +30,9 @@ const About: React.FC = () => {
             viewport={{ once: false, amount: 0.4 }}
             className="about-container-content flex flex-col gap-8 md:!pd-20 !pb-40"
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full  text-[var(--second-color)]">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full  text-[var(--second-color)]">
               About Me
-            </h2>
+            </h1>
             <p className="text-white/70 text-md md:text-lg lg:text-2xl font-[var(--font-Kanit)] !mt-5">
               <b className="text-[var(--second-color)]">
                 I'm a passionate Frontend Developer focused on building clean,

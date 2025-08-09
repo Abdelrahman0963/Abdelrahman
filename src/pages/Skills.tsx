@@ -45,9 +45,9 @@ const Skills: React.FC = () => {
           className="skills-section-container cursor-no-drop  w-full  lg:h-full h-auto bg-[#161B22]  overflow-hidden  !p-8 rounded-md"
         >
           <div className="skills-section-slogan">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full  text-[var(--sixth-color)]">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full  text-[var(--sixth-color)]">
               Skills
-            </h2>
+            </h1>
           </div>
           <div className="skills-section-content grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 md:!p-5 !p-2">
             {skills.map((skill, index) => (
