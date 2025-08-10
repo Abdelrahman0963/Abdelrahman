@@ -12,7 +12,7 @@ const Home: React.FC = () => {
     <>
       <section
         style={{
-          backgroundImage: `url('../../public/Images/home-pattern-1.png')`,
+          backgroundImage: `url('/Images/home-pattern-1.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
