@@ -20,7 +20,7 @@ const About: React.FC = () => {
               loading="lazy"
               className=" w-full h-auto"
               src="/Images/Porfile.jpeg"
-              alt="Abderhaman Image"
+              alt="Portrait photo of Abdelrahman Sayed, Frontend Developer"
             />
           </motion.div>
           <motion.div
@@ -30,9 +30,9 @@ const About: React.FC = () => {
             viewport={{ once: false, amount: 0.4 }}
             className="about-container-content flex flex-col gap-8 md:!pd-20 !pb-40"
           >
-            <h1 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full  text-[var(--second-color)]">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full  text-[var(--second-color)]">
               About Me
-            </h1>
+            </h2>
             <p className="text-white/70 text-md md:text-lg lg:text-2xl font-[var(--font-Kanit)] !mt-5">
               <b className="text-[var(--second-color)]">
                 I'm a passionate Frontend Developer focused on building clean,

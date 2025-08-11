@@ -2,12 +2,12 @@ import { FaReact } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Home: React.FC = () => {
-  function DownloadPDF() {
+  const DownloadPDF = (): void => {
     const link = document.createElement("a");
     link.href = "/Resume/AbdelrahmanResume.pdf";
     link.download = "AbdelrahmanResume.pdf";
     link.click();
-  }
+  };
   return (
     <>
       <section

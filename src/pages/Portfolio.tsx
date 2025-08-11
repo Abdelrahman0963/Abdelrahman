@@ -48,13 +48,13 @@ const Portfolio: React.FC = () => {
       >
         <div className="portfolio-section-container h-auto !p-8">
           <div className="portfolio-section-slogan">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full text-[var(--third-color)]">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full text-[var(--third-color)]">
               Portfolio
-            </h1>
+            </h2>
           </div>
           <div className="portfolio-section-container-cards w-full h-full !py-4   md:!p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {projects.map((project, index) => (
-              <motion.div
+              <motion.article
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.7, ease: "easeInOut" }}
@@ -68,7 +68,7 @@ const Portfolio: React.FC = () => {
                       loading="lazy"
                       className="w-[100%] h-[100%] object-cover rounded-md"
                       src={project.projectImage}
-                      alt={project.projectName}
+                      alt="Screenshot of Instagram Downloader web app"
                     />
                   </a>
                 </div>
@@ -110,7 +110,7 @@ const Portfolio: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         </div>
