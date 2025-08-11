@@ -100,7 +100,7 @@ const Skills: React.FC = () => {
                 ease: "easeInOut",
                 delay: index * 0.05,
               }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: false, amount: 0.2 }}
               className="skill-item flex items-center justify-center gap-2 !p-5 bg-[var(--bg-color)] rounded-md"
             >
               {skill.icon}
