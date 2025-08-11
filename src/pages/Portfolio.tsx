@@ -54,7 +54,7 @@ const Portfolio: React.FC = () => {
           </div>
           <div className="portfolio-section-container-cards w-full h-full !py-4   md:!p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {projects.map((project, index) => (
-              <motion.article
+              <motion.div
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.7, ease: "easeInOut" }}
@@ -110,7 +110,7 @@ const Portfolio: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </motion.article>
+              </motion.div>
             ))}
           </div>
         </div>
