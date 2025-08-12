@@ -18,7 +18,7 @@ const Navbar: React.FC = function () {
       >
         <div className="navbar-container relative  flex items-center w-full justify-between transform duration-500">
           <div className="navbar-logo w-72 xl:!px-10 lg:!px-8 !px-5">
-            <img src={img} className="w-full" alt="logo" loading="lazy" />
+            <img src={img} className="w-full" alt="logo" />
           </div>
 
           <div className="navbar-links !px-10 hidden md:flex items-center gap-10 text-white">
