@@ -7,6 +7,7 @@ const Navbar: React.FC = function () {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const navbarLinks = ["Home", "About", "Skills", "Portfolio", "Contact"];
+
   return (
     <>
       <motion.div
@@ -14,7 +15,7 @@ const Navbar: React.FC = function () {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: "-100%", opacity: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="navbar fixed top-6 h-[60px] bg-[#cfe9fe27] rounded-lg md:w-[95%] w-[90%] flex items-center z-50 "
+        className="navbar container mx-auto fixed top-6 h-[60px] bg-[#0d1117] rounded-lg md:w-[95%] w-[90%] flex items-center z-50 "
       >
         <div className="navbar-container relative  flex items-center w-full justify-between transform duration-500">
           <div className="navbar-logo w-72 xl:!px-10 lg:!px-8 !px-5">
@@ -60,7 +61,7 @@ const Navbar: React.FC = function () {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: "-100%", opacity: 0 }}
           transition={{ duration: 0.1, ease: "easeInOut" }}
-          className={`origin-top transform transition-all duration-500 ease-in-out absolute top-[5rem] left-0 w-full shadow-2xl bg-[#0d1117] flex flex-col items-start gap-6 !px-6 !py-10 z-40 md:hidden ${
+          className={`origin-top transform transition-all duration-500 ease-in-out fixed top-[5rem] left-0 w-full shadow-2xl bg-[#0d1117] flex flex-col items-start gap-6 !px-6 !py-10 z-40 md:hidden ${
             isOpen
               ? "opacity-100 scale-y-100 max-h-screen"
               : "opacity-0 scale-y-0 max-h-0 pointer-events-none"

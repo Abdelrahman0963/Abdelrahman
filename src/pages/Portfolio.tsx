@@ -60,7 +60,7 @@ const Portfolio: React.FC = () => {
                 transition={{ duration: 0.7, ease: "easeInOut" }}
                 viewport={{ once: false, amount: 0.2 }}
                 key={index}
-                className="portfolio-section-container-cards-card overflow-hidden w-full bg-[#161B22] !p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
+                className="portfolio-section-container-cards-card overflow-hidden w-full bg-[#161B22] !p-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
               >
                 <div className="portfolio-section-container-cards-card-image h-[200px]  hover:brightness-50  rounded-md">
                   <a href={project.projectLinkonWebsite}>

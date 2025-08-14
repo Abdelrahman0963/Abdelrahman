@@ -65,7 +65,7 @@ const Home: React.FC = () => {
                 onClick={DownloadPDF}
                 className="md:relative md:shadow-[0px_-10px_100px_0_#c498fc]  hover:scale-[.9] absolute left-0 inline-flex h-10 items-center justify-center !p-2 !me-2 overflow-hidden text-sm font-medium  rounded-lg group bg-gradient-to-br text-white from-purple-600 to-blue-500  dark:focus:ring-[#c498fc] cursor-pointer"
               >
-                <span className="md:relative flex items-center transition-all ease-in duration-75 bg-white dark:bg-transparent rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                <span className="md:relative flex items-center ">
                   Resume Download
                 </span>
               </button>
