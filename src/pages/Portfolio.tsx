@@ -46,13 +46,13 @@ const Portfolio: React.FC = () => {
         id="portfolio"
         className="portfolio-section  w-full h-full bg-[var(--bg-color)]  relative !z-0  md:!pt-20"
       >
-        <div className="portfolio-section-container h-auto !p-8">
+        <div className="portfolio-section-container h-auto !py-4  md:!p-8">
           <div className="portfolio-section-slogan">
             <h2 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full text-[var(--third-color)]">
               Portfolio
             </h2>
           </div>
-          <div className="portfolio-section-container-cards w-full h-full !py-4   md:!p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="portfolio-section-container-cards  w-full h-full !py-4 md:!p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {projects.map((project, index) => (
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
@@ -60,7 +60,7 @@ const Portfolio: React.FC = () => {
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 viewport={{ once: false, amount: 0.2 }}
                 key={index}
-                className="portfolio-section-container-cards-card overflow-hidden w-full bg-[#161B22] !p-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
+                className="portfolio-section-container-cards-card overflow-hidden w-fit md:w-full bg-[#161B22] !p-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
               >
                 <div className="portfolio-section-container-cards-card-image h-[200px]  hover:brightness-50  rounded-md">
                   <a href={project.projectLinkonWebsite}>
