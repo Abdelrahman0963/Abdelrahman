@@ -93,11 +93,11 @@ const Skills: React.FC = () => {
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              initial={{ y: 100, opacity: 0 }}
+              initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
-                duration: 0.7,
-                ease: "easeInOut",
+                duration: 0.3,
+                ease: "easeOut",
                 delay: index * 0.05,
               }}
               viewport={{ once: false, amount: 0.2 }}

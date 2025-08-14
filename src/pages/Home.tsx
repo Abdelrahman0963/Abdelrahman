@@ -24,9 +24,9 @@ const Home: React.FC = () => {
       >
         <div className="home-container w-full md:h-auto h-full text-white flex-col md:flex-row flex items-center justify-center md:justify-between md:!mb-0 !mb-15">
           <motion.div
-            initial={{ x: 100, opacity: 0 }}
+            initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             viewport={{ once: false, amount: 0.2 }}
             className="home-content w-full "
           >
@@ -39,18 +39,18 @@ const Home: React.FC = () => {
             </h2>
           </motion.div>
           <motion.div
-            initial={{ x: "100%", opacity: 0 }}
+            initial={{ x: "50%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: "100%", opacity: 0 }}
-            transition={{ duration: 0.7, ease: "easeInOut" }}
+            exit={{ x: "50%", opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className="home-icon-resume flex flex-col items-center"
           >
             <motion.div
-              animate={{ y: [0, -15, 0] }}
+              animate={{ y: [0, -10, 0] }}
               transition={{
-                duration: 2,
+                duration: 1,
                 repeat: Infinity,
-                ease: "easeInOut",
+                ease: "easeOut",
               }}
               viewport={{ once: false, amount: 0.2 }}
               className="home-icon md:flex hidden"

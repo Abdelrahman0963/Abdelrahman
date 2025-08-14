@@ -10,9 +10,9 @@ const About: React.FC = () => {
       >
         <div className="about-container w-full h-auto flex md:flex-row flex-col items-center md:justify-between overflow-hidden gap-10 md:!mb-5 !mb-0">
           <motion.div
-            initial={{ x: 100, opacity: 0 }}
+            initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7, ease: "easeInOut" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.2 }}
             className="about-container-content-profile-image w-full overflow-hidden h-full md:h-auto border-2 border-[var(--second-color)] flex items-center justify-center !p-1  rounded-lg "
           >
@@ -24,10 +24,10 @@ const About: React.FC = () => {
             />
           </motion.div>
           <motion.div
-            initial={{ x: 100, opacity: 0 }}
+            initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7, ease: "easeInOut" }}
-            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            viewport={{ once: false, amount: 0.2 }}
             className="about-container-content flex flex-col gap-8 md:!pd-20 !pb-40"
           >
             <h2 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full  text-[var(--second-color)]">
