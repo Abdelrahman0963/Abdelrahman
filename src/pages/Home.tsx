@@ -20,9 +20,9 @@ const Home: React.FC = () => {
           backgroundBlendMode: "overlay",
         }}
         id="home"
-        className="home-section w-full h-[100vh] overflow-hidden bg-cover bg-center flex items-center  justify-center relative z-0 "
+        className="w-full h-[100vh] overflow-hidden bg-cover bg-center flex items-center  justify-center relative z-0 "
       >
-        <div className="home-container w-full md:h-auto h-full text-white flex-col md:flex-row flex items-center justify-center md:justify-between md:!mb-0 !mb-15">
+        <div className="w-full md:h-auto h-full text-white flex-col md:flex-row flex items-center justify-center md:justify-between md:!mb-0 !mb-15">
           <motion.div
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -43,7 +43,7 @@ const Home: React.FC = () => {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "50%", opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="home-icon-resume flex flex-col items-center"
+            className="flex flex-col items-center"
           >
             <motion.div
               animate={{ y: [0, -10, 0] }}
@@ -53,14 +53,14 @@ const Home: React.FC = () => {
                 ease: "easeOut",
               }}
               viewport={{ once: false, amount: 0.2 }}
-              className="home-icon md:flex hidden"
+              className="md:flex hidden"
             >
               <FaReact
                 size={300}
                 className="text-[var(--first-color)] md:text-4xl text-2xl !mb-15 opacity-75"
               />
             </motion.div>
-            <div className="home-content-resume-btn !mt-3">
+            <div className="!mt-3">
               <button
                 onClick={DownloadPDF}
                 className="md:relative md:shadow-[0px_-10px_100px_0_#c498fc]  hover:scale-[.9] absolute left-0 inline-flex h-10 items-center justify-center !p-2 !me-2 overflow-hidden text-sm font-medium  rounded-lg group bg-gradient-to-br text-white from-purple-600 to-blue-500  dark:focus:ring-[#c498fc] cursor-pointer"

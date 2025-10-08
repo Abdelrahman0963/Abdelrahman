@@ -7,7 +7,7 @@ const Portfolio: React.FC = () => {
     projectImage: string;
     projectName: string;
     projectLinkonGithub: string;
-    projectLinkonWebsite: string;
+    projectLinkonWebsite?: string;
     projectTechnologies: string[];
   }
 
@@ -31,13 +31,12 @@ const Portfolio: React.FC = () => {
       projectTechnologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     },
     {
-      projectImage: "/Projects Images/Foton.png",
-      projectName: "clone Home page",
+      projectImage: "/Projects Images/Bay3.png",
+      projectName: "Bay3",
       projectLinkonGithub:
-        "https://github.com/Abdelrahman0963/task-foton-landing-Page.git",
-      projectLinkonWebsite: "https://task-foton-landing-page.vercel.app/",
-      projectTechnologies: ["React", "Tailwind", "Motion"],
-    },
+        "https://github.com/Abdelrahman0963/E-commerce-Bay3.git",
+      projectTechnologies: ["Next.js", "zustand", "React Query", "Tailwind"],
+    }
   ];
 
   return (
@@ -52,17 +51,17 @@ const Portfolio: React.FC = () => {
               Portfolio
             </h2>
           </div>
-          <div className="portfolio-section-container-cards  w-full h-full !py-4 md:!p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="w-full h-full !py-4 md:!p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {projects.map((project, index) => (
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.2 }}
                 key={index}
-                className="portfolio-section-container-cards-card overflow-hidden w-fit md:w-full bg-[#161B22] !p-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
+                className="overflow-hidden w-fit md:w-full bg-[#161B22] !p-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
               >
-                <div className="portfolio-section-container-cards-card-image h-[200px]  hover:brightness-50  rounded-md">
+                <div className="h-[200px]  hover:brightness-50  rounded-md">
                   <a href={project.projectLinkonWebsite}>
                     <img
                       loading="lazy"
@@ -72,7 +71,7 @@ const Portfolio: React.FC = () => {
                     />
                   </a>
                 </div>
-                <div className="portfolio-section-container-cards-card-content flex flex-col items-center justify-between !p-3">
+                <div className="flex flex-col items-center justify-between !p-3">
                   <div className="flex w-full  gap-2 ">
                     {project.projectTechnologies.map((tech, index) => (
                       <nav
@@ -86,11 +85,11 @@ const Portfolio: React.FC = () => {
                     ))}
                   </div>
 
-                  <div className="portfolio-section-container-cards-card-titleAndIcons w-full flex items-center justify-between gap-4">
+                  <div className="w-full flex items-center justify-between gap-4">
                     <h3 className="text-[var(--third-color)]">
                       {project.projectName}
                     </h3>
-                    <div className="portfolio-section-container-cards-card-icons flex items-center gap-4">
+                    <div className="flex items-center gap-4">
                       <a
                         className="md:w-8 md:h-8 w-6 h-6 p-2 bg-[var(--third-color)] rounded-full flex items-center justify-center"
                         href={project.projectLinkonGithub}
@@ -99,14 +98,14 @@ const Portfolio: React.FC = () => {
                           className: "md:text-3xl text-2xl text-[#161B22]",
                         })}
                       </a>
-                      <a
+                      {project.projectLinkonWebsite && <a
                         className="md:w-8 md:h-8  w-6 h-6 p-2 bg-[var(--third-color)] rounded-full flex items-center justify-center"
                         href={project.projectLinkonWebsite}
                       >
                         {cloneElement(<BiSolidShow />, {
                           className: "md:text-3xl text-2xl text-[#161B22]",
                         })}
-                      </a>
+                      </a>}
                     </div>
                   </div>
                 </div>
