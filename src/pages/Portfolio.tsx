@@ -32,10 +32,17 @@ const Portfolio: React.FC = () => {
     },
     {
       projectImage: "/Projects Images/Bay3.png",
-      projectName: "Bay3",
+      projectName: "Bay3 WebApp",
       projectLinkonGithub:
         "https://github.com/Abdelrahman0963/E-commerce-Bay3.git",
-      projectTechnologies: ["Next.js", "zustand", "React Query", "Tailwind"],
+      projectTechnologies: ["Next.js", "zustand", "React Query", "Tailwind", "Strapi"],
+    }, {
+      projectImage: "/Projects Images/SchoolWebsite.png",
+      projectName: "Little Learners",
+      projectLinkonGithub:
+        "https://github.com/Abdelrahman0963/School-Education-Website.git",
+      projectLinkonWebsite: "https://school-education-website-ten.vercel.app/",
+      projectTechnologies: ["React.js", "Typescript", "Tailwind"],
     }
   ];
 
