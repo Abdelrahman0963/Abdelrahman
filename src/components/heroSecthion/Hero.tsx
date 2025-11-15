@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
               viewport={{ once: false, amount: 0.2 }}
               className="home-content w-full "
             >
-              <h2 className="xl:text-8xl lg:text-7xl text-6xl font-[var(--font-Kanit)] leading-[1.1]">
+              <h2 className="xl:text-8xl lg:text-7xl text-5xl font-[var(--font-Kanit)] leading-[1.1]">
                 <p className="text-[var(--first-color)]">Hi, I'm </p>
                 <TextType
                   text={["Abdelrahman Sayed"]}
