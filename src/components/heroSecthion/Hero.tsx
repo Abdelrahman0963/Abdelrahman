@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import TextType from '../TextType';
 import PixelBlast from "../PixelBlast";
 import { Container } from "../ui/Container";
-import Magnet from "../Magnet";
 
 const Hero: React.FC = () => {
   const DownloadPDF = (): void => {
@@ -70,15 +69,12 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="flex  flex-col items-start md:items-center justify-end md:w-auto w-full"
             >
-              <Magnet padding={100} disabled={false} magnetStrength={50}>
                 <div className="md:flex w-full hidden relative">
                   <FaReact
                     size={300}
                     className="text-[var(--first-color)] md:text-4xl text-2xl !mb-15 opacity-75"
                   />
                 </div>
-              </Magnet>
-              <Magnet padding={50} disabled={false} magnetStrength={50}>
 
                 <div className="md:mt-3! mr-0! mt-10! w-full flex items-start justify-start">
                   <button
@@ -90,7 +86,6 @@ const Hero: React.FC = () => {
                     </span>
                   </button>
                 </div>
-              </Magnet>
             </motion.div>
           </div>
         </Container>
