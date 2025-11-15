@@ -4,7 +4,8 @@ import { IoIosTimer, IoLogoHtml5 } from "react-icons/io";
 import { FaBootstrap, FaCss3, FaGithub, FaJs } from "react-icons/fa";
 import { RiBearSmileFill, RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
-import { SiNextdotjs, SiReactquery, SiTypescript } from "react-icons/si";
+import { SiNextdotjs, SiReactquery, SiRedux, SiShadcnui, SiTypescript } from "react-icons/si";
+
 import { IoLogoReact } from "react-icons/io5";
 import { FiFigma } from "react-icons/fi";
 import { FaGear } from "react-icons/fa6";
@@ -36,6 +37,11 @@ const skills: Skill[] = [
     icon: <FiFigma className="text-4xl text-[var(--first-color)]" />,
   },
   {
+    name: "Shadcn UI",
+    icon: <SiShadcnui className="text-3xl text-[var(--first-color)]" />
+
+  },
+  {
     name: "Framer Motion",
     icon: (
       <TbBrandFramerMotion className="text-4xl text-[var(--first-color)]" />
@@ -56,6 +62,10 @@ const skills: Skill[] = [
   {
     name: "Zustand",
     icon: <RiBearSmileFill className="text-4xl text-[var(--first-color)]" />,
+  },
+  {
+    name: "redux toolkit",
+    icon: <SiRedux className="text-4xl text-[var(--first-color)]" />,
   },
   {
     name: "React Query",
@@ -90,6 +100,7 @@ const Skills: React.FC = () => {
           Skills
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 md:!p-5 !py-3">
+
           {skills.map((skill, index) => (
             <motion.div
               key={index}

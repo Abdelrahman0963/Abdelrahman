@@ -2,50 +2,17 @@ import React, { cloneElement } from "react";
 import { BiSolidShow } from "react-icons/bi";
 import { FaGithubAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link, } from "react-router-dom";
+import { projects } from "../../server/projects";
+interface projectsprops {
+  projectImage: string;
+  projectName: string;
+  projectLinkonGithub: string;
+  projectLinkonWebsite?: string;
+  projectTechnologies: string[];
+}
 const Portfolio: React.FC = () => {
-  interface projects {
-    projectImage: string;
-    projectName: string;
-    projectLinkonGithub: string;
-    projectLinkonWebsite?: string;
-    projectTechnologies: string[];
-  }
-
-  const projects: projects[] = [
-    {
-      projectImage: "/Projects Images/instagram.png",
-      projectName: "Instagram Donwloader",
-      projectLinkonGithub:
-        "https://github.com/Abdelrahman0963/Video-Downloader.git",
-      projectLinkonWebsite:
-        "https://abdelrahman0963.github.io/Video-Downloader/",
-      projectTechnologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    },
-    {
-      projectImage: "/Projects Images/Crud.png",
-      projectName: "CRUD Operation",
-      projectLinkonGithub:
-        "https://github.com/Abdelrahman0963/CRUD-Operation--System.git",
-      projectLinkonWebsite:
-        "https://abdelrahman0963.github.io/CRUD-Operation--System/",
-      projectTechnologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-    },
-    {
-      projectImage: "/Projects Images/Bay3.png",
-      projectName: "Bay3 WebApp",
-      projectLinkonGithub:
-        "https://github.com/Abdelrahman0963/E-commerce-Bay3.git",
-      projectTechnologies: ["Next.js", "zustand", "React Query", "Tailwind", "Strapi"],
-    }, {
-      projectImage: "/Projects Images/SchoolWebsite.png",
-      projectName: "Little Learners",
-      projectLinkonGithub:
-        "https://github.com/Abdelrahman0963/School-Education-Website.git",
-      projectLinkonWebsite: "https://school-education-website-ten.vercel.app/",
-      projectTechnologies: ["React.js", "Typescript", "Tailwind"],
-    }
-  ];
-
+  const project: projectsprops[] = projects;
   return (
     <>
       <section
@@ -58,15 +25,15 @@ const Portfolio: React.FC = () => {
               Portfolio
             </h2>
           </div>
-          <div className="w-full h-full !py-4 md:!p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {projects.map((project, index) => (
+          <div className="w-full  h-full px-8! md:px-4 !py-4 md:!p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-4">
+            {project.slice(0, 3).map((project: projectsprops, index: number) => (
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 viewport={{ once: true, amount: 0.2 }}
                 key={index}
-                className="overflow-hidden w-fit md:w-full bg-[#161B22] !p-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
+                className="overflow-hidden w-full px-4! bg-[#161B22] !p-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
               >
                 <div className="h-[200px]  hover:brightness-50  rounded-md">
                   <a href={project.projectLinkonWebsite}>
@@ -83,7 +50,7 @@ const Portfolio: React.FC = () => {
                     {project.projectTechnologies.map((tech, index) => (
                       <nav
                         key={index}
-                        className="bg-[var(--bg-color)] rounded-full text-wrap !p-2"
+                        className="bg-[var(--bg-color)]  rounded-full text-wrap !p-2"
                       >
                         <p className="text-[var(--third-color)] text-[.6rem]">
                           {tech}
@@ -91,7 +58,6 @@ const Portfolio: React.FC = () => {
                       </nav>
                     ))}
                   </div>
-
                   <div className="w-full flex items-center justify-between gap-4">
                     <h3 className="text-[var(--third-color)]">
                       {project.projectName}
@@ -119,6 +85,16 @@ const Portfolio: React.FC = () => {
               </motion.div>
             ))}
           </div>
+          <nav className="flex items-center justify-center md:justify-end !p-4">
+            <Link
+              to="/more-projects"
+              className=" bg-[var(--third-color)] text-white  hover:text-[var(--third-color)] hover:bg-[#ec654757] p-3! rounded-md  transition duration-300 ease-in-out"
+            >
+              <span className=" font-medium">
+                More Projects
+              </span>
+            </Link>
+          </nav>
         </div>
       </section>
     </>
