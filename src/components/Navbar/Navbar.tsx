@@ -3,7 +3,6 @@ import img from "../../../public/Logo/logo.png";
 import { LuPanelBottomClose, LuPanelTopClose } from "react-icons/lu";
 import { motion } from "framer-motion";
 import GooeyNav from "../GooeyNav";
-import { Container } from "../ui/Container";
 
 interface GooeyNavItem {
   label: string;

@@ -1,4 +1,4 @@
-import React, { CSSProperties, PropsWithChildren, useEffect, useId, useLayoutEffect, useRef } from 'react';
+import React, { type CSSProperties, type PropsWithChildren, useEffect, useId, useLayoutEffect, useRef } from 'react';
 
 type ElectricBorderProps = PropsWithChildren<{
   color?: string;
@@ -84,7 +84,7 @@ const ElectricBorder: React.FC<ElectricBorderProps> = ({
         if (typeof a.beginElement === 'function') {
           try {
             a.beginElement();
-          } catch {}
+          } catch { }
         }
       });
     });

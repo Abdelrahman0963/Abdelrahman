@@ -3,7 +3,6 @@ import { BiLogoGmail } from "react-icons/bi";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { FaSquareWhatsapp } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
-import { Container } from "lucide-react";
 const Footer: React.FC = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
 
