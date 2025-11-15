@@ -1,5 +1,4 @@
 import React, { type ReactNode } from "react";
-import { motion } from "framer-motion";
 import { IoIosTimer, IoLogoHtml5 } from "react-icons/io";
 import { FaBootstrap, FaCss3, FaGithub, FaJs } from "react-icons/fa";
 import { RiBearSmileFill, RiTailwindCssFill } from "react-icons/ri";
@@ -102,23 +101,15 @@ const Skills: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 md:!p-5 !py-3">
 
           {skills.map((skill, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{
-                duration: 0.3,
-                ease: "easeOut",
-                delay: index * 0.05,
-              }}
-              viewport={{ once: false, amount: 0.2 }}
               className="flex items-center justify-center gap-2 !p-5 bg-[var(--bg-color)] rounded-md"
             >
               {skill.icon}
               <h3 className="text-[0.8rem] md:text-[1rem] text-[var(--first-color)]">
                 {skill.name}
               </h3>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -3,6 +3,7 @@ import { BiLogoGmail } from "react-icons/bi";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { FaSquareWhatsapp } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
 const Footer: React.FC = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
 
@@ -19,6 +20,7 @@ const Footer: React.FC = () => {
       )
       .then(() => {
         formRef.current?.reset();
+
       })
       .catch((err) => console.log(err));
   };
@@ -100,6 +102,8 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex justify-end">
                 <button
+                  name="submit"
+                  onClick={() => toast.success("Message sent successfully!")}
                   value="Send"
                   type="submit"
                   className="bg-[var(--first-color)] w-20 text-[#161B22] font-semibold py-2 px-6 rounded-md hover:bg-opacity-90 transition-all duration-300"

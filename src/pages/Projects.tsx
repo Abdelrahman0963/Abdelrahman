@@ -1,7 +1,6 @@
 import { projects } from "../server/projects";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { FaGithubAlt } from "react-icons/fa";
 import { BiSolidShow } from "react-icons/bi";
 import { cloneElement } from "react";
@@ -26,11 +25,8 @@ const Projects = () => {
             </nav>
             <div className="w-full  h-full px-8! md:px-4 !py-4 md:!p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-4">
                 {project.map((project: projectsprops, index: number) => (
-                    <motion.div
-                        initial={{ y: 50, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.3, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.2 }}
+                    <div
+
                         key={index}
                         className="overflow-hidden w-full px-4! bg-[#161B22] !p-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
                     >
@@ -81,7 +77,7 @@ const Projects = () => {
                                 </div>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
         </section>

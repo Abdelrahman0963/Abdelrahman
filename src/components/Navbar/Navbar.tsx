@@ -1,7 +1,6 @@
-import { useState } from "react";
-import img from "../../../public/Logo/logo.png";
+import { memo, useState, useCallback } from "react";
+import img from "/Logo/logo.png";
 import { LuPanelBottomClose, LuPanelTopClose } from "react-icons/lu";
-import { motion } from "framer-motion";
 import GooeyNav from "../GooeyNav";
 
 interface GooeyNavItem {
@@ -9,48 +8,50 @@ interface GooeyNavItem {
   href: string;
 }
 
-const Navbar: React.FC = function () {
+const navbarLinks: GooeyNavItem[] = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Contact", href: "#contact" },
+];
+
+const Navbar: React.FC = memo(function () {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
-  // ✔️ Array of items
-  const navbarLinks: GooeyNavItem[] = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Contact", href: "#contact" },
-  ];
+  const handleMobileClick = useCallback((index: number) => {
+    setActiveIndex(index);
+    setIsOpen(false);
+  }, []);
 
   return (
     <>
-      {/* Desktop Navbar */}
-      <motion.div
-        initial={{ y: "-100%", opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: "-100%", opacity: 0 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="navbar container mx-auto fixed top-6 h-[60px] bg-[#0d1117] rounded-lg md:w-[95%] w-[100%] flex items-center z-50"
-      >
-        <div className="navbar-container relative flex items-center w-full justify-between transform duration-500">
+      <header className="navbar container mx-auto fixed top-6 h-[60px] bg-[#0d1117] rounded-lg md:w-[95%] w-full flex items-center z-50">
+        <div className="navbar-container relative flex items-center w-full justify-between">
+
           {/* Logo */}
-          <picture className="navbar-logo overflow-hidden lg:pl-14! md:pl-4! pl-4! flex items-center w-[150px] md:w-[250px] ">
-            <img src={img} className="w-full" alt="logo" />
+          <picture className="navbar-logo lg:pl-14! md:pl-4! pl-4! w-[150px] md:w-[250px]">
+            <img
+              src={img}
+              className="w-full"
+              alt="logo"
+              loading="eager"
+            />
           </picture>
 
-          {/* Desktop Links */}
-          <div className=" lg:pr-8! md:pr-4! pr-2! hidden md:flex items-center gap-10 text-white">
+          <nav className="lg:pr-8! md:pr-4! pr-2! hidden md:flex items-center">
             <GooeyNav
               items={navbarLinks}
-              particleCount={15}
-              particleDistances={[90, 10]}
-              particleR={100}
+              particleCount={10}
+              particleDistances={[60, 10]}
+              particleR={70}
               initialActiveIndex={0}
-              animationTime={600}
-              timeVariance={300}
-              colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+              animationTime={450}
+              timeVariance={250}
+              colors={[1, 2, 3, 2, 3]}
             />
-          </div>
+          </nav>
 
           {/* Mobile Icon */}
           <div className="navbar-linksIcon flex md:hidden !px-5">
@@ -66,38 +67,31 @@ const Navbar: React.FC = function () {
               />
             )}
           </div>
-        </div>
-      </motion.div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ y: "-100%", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: "-100%", opacity: 0 }}
-          transition={{ duration: 0.1, ease: "easeInOut" }}
-          className={`origin-top transform transition-all duration-500 fixed top-[5rem] left-0 w-full shadow-2xl bg-[#0d1117] flex flex-col items-start gap-6 !px-6 !py-10 z-40 md:hidden`}
-        >
-          {navbarLinks.map((link, index) => (
-            <a
-              key={index}
-              onClick={() => {
-                setActiveIndex(index);
-                setIsOpen(false);
-              }}
-              className={`text-white text-lg transition-all duration-300 ${index === activeIndex
-                ? "font-bold text-[var(--first-color)]"
-                : ""
-                }`}
-              href={link.href} // ✔️ Correct href
-            >
-              {link.label} {/* ✔️ Correct text */}
-            </a>
-          ))}
-        </motion.div>
-      )}
+        </div>
+      </header>
+
+      {/* Mobile menu */}
+      <nav
+        className={`fixed top-[5rem] left-0 w-full shadow-2xl bg-[#0d1117] 
+        flex flex-col gap-6 p-6 py-10 z-40 md:hidden 
+        transform transition-all duration-300 origin-top
+        ${isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"}`}
+      >
+        {navbarLinks.map((link, index) => (
+          <a
+            key={link.href}
+            onClick={() => handleMobileClick(index)}
+            className={`text-white text-lg transition-all duration-200 ${index === activeIndex ? "font-bold text-[var(--first-color)]" : ""
+              }`}
+            href={link.href}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
     </>
   );
-};
+});
 
 export default Navbar;

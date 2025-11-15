@@ -1,7 +1,8 @@
-import { motion } from "framer-motion";
 import type React from "react";
 import { Container } from "../ui/Container";
-import ElectricBorder from "../ElectricBorder";
+import { lazy } from "react";
+
+const ElectricBorder = lazy(() => import("../ElectricBorder"));
 
 const About: React.FC = () => {
   return (
@@ -12,11 +13,7 @@ const About: React.FC = () => {
       >
         <Container className="h-full flex items-center justify-between !p-5 md:!p-16">
           <div className="w-full h-auto flex md:flex-row flex-col items-center md:justify-between overflow-hidden gap-10 md:!mb-5 !mb-0">
-            <motion.div
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              viewport={{ once: false, amount: 0.2 }}
+            <div
               className="w-full overflow-hidden h-full md:h-auto flex items-center justify-center !p-2"
             >
               <ElectricBorder
@@ -33,12 +30,8 @@ const About: React.FC = () => {
                   alt="Portrait photo of Abdelrahman Sayed, Frontend Developer"
                 />
               </ElectricBorder>
-            </motion.div>
-            <motion.div
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              viewport={{ once: false, amount: 0.2 }}
+            </div>
+            <div
               className="flex flex-col gap-8 md:!pd-20 !pb-40"
             >
               <h2 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full  text-[var(--second-color)]">
@@ -53,7 +46,7 @@ const About: React.FC = () => {
                 integration, and I’m always eager to learn and grow in this
                 ever-evolving field.
               </p>
-            </motion.div>
+            </div>
           </div>
         </Container>
       </section>
