@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import TextType from '../TextType';
 import PixelBlast from "../PixelBlast";
 import { Container } from "../ui/Container";
-import Magnet from "../Magnet";
 
 const Hero: React.FC = () => {
   const DownloadPDF = (): void => {
@@ -48,7 +47,7 @@ const Hero: React.FC = () => {
               viewport={{ once: false, amount: 0.2 }}
               className="home-content w-full "
             >
-              <h2 className="xl:text-8xl lg:text-7xl text-6xl font-[var(--font-Kanit)] leading-[1.1]">
+              <h2 className="xl:text-8xl lg:text-7xl text-5xl font-[var(--font-Kanit)] leading-[1.1]">
                 <p className="text-[var(--first-color)]">Hi, I'm </p>
                 <TextType
                   text={["Abdelrahman Sayed"]}
@@ -70,27 +69,23 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="flex  flex-col items-start md:items-center justify-end md:w-auto w-full"
             >
-              <Magnet padding={100} disabled={false} magnetStrength={50}>
-                <div className="md:flex w-full hidden relative">
-                  <FaReact
-                    size={300}
-                    className="text-[var(--first-color)] md:text-4xl text-2xl !mb-15 opacity-75"
-                  />
-                </div>
-              </Magnet>
-              <Magnet padding={50} disabled={false} magnetStrength={50}>
+              <div className="md:flex w-full hidden relative">
+                <FaReact
+                  size={300}
+                  className="text-[var(--first-color)] md:text-4xl text-2xl !mb-15 opacity-75"
+                />
+              </div>
 
-                <div className="md:mt-3! mr-0! mt-10! w-full flex items-start justify-start">
-                  <button
-                    onClick={DownloadPDF}
-                    className="md:relative w-[200px]  md:shadow-[0px_-10px_100px_0_#c498fc]  hover:scale-[.9] absolute left-0 inline-flex h-10 items-center justify-center !p-2 !me-2 overflow-hidden text-sm font-medium  rounded-lg group bg-gradient-to-br text-white from-purple-600 to-blue-500  dark:focus:ring-[#c498fc] cursor-pointer"
-                  >
-                    <span className="md:relative flex items-center ">
-                      Resume Download
-                    </span>
-                  </button>
-                </div>
-              </Magnet>
+              <div className="md:mt-3! mr-0! mt-10! w-full flex items-start justify-start">
+                <button
+                  onClick={DownloadPDF}
+                  className="md:relative w-[200px]  md:shadow-[0px_-10px_100px_0_#c498fc]  hover:scale-[.9] absolute left-0 inline-flex h-10 items-center justify-center !p-2 !me-2 overflow-hidden text-sm font-medium  rounded-lg group bg-gradient-to-br text-white from-purple-600 to-blue-500  dark:focus:ring-[#c498fc] cursor-pointer"
+                >
+                  <span className="md:relative flex items-center ">
+                    Resume Download
+                  </span>
+                </button>
+              </div>
             </motion.div>
           </div>
         </Container>
