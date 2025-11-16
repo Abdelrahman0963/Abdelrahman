@@ -7,7 +7,7 @@ import { cloneElement } from "react";
 interface projectsprops {
     projectImage: string;
     projectName: string;
-    projectLinkonGithub: string;
+    projectLinkonGithub?: string;
     projectLinkonWebsite?: string;
     projectTechnologies: string[];
 }

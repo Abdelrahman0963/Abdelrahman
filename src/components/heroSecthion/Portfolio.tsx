@@ -7,7 +7,7 @@ import { projects } from "../../server/projects";
 interface projectsprops {
   projectImage: string;
   projectName: string;
-  projectLinkonGithub: string;
+  projectLinkonGithub?: string;
   projectLinkonWebsite?: string;
   projectTechnologies: string[];
 }
@@ -55,7 +55,7 @@ const Portfolio: React.FC = () => {
                       <nav
                         key={index}
                         className="bg-[var(--bg-color)] rounded-full flex items-center justify-center px-2! py-1!
-             w-auto sm:w-auto xs:w-[30%]"
+                             w-auto sm:w-auto xs:w-[30%]"
                       >
                         <p className="text-[var(--third-color)] text-[.6rem]">{tech}</p>
                       </nav>
@@ -68,17 +68,18 @@ const Portfolio: React.FC = () => {
                     </h3>
 
                     <div className="flex items-center gap-4">
-                      <Link
-                        className="md:w-8 md:h-8 w-6 h-6 p-2 bg-[var(--third-color)] rounded-full flex items-center justify-center"
-                        to={project.projectLinkonGithub}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {cloneElement(<FaGithubAlt />, {
-                          className: "md:text-3xl text-2xl text-[#161B22]",
-                        })}
-                      </Link>
-
+                      {project.projectLinkonGithub && (
+                        <Link
+                          className="md:w-8 md:h-8 w-6 h-6 p-2 bg-[var(--third-color)] rounded-full flex items-center justify-center"
+                          to={project.projectLinkonGithub}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {cloneElement(<FaGithubAlt />, {
+                            className: "md:text-3xl text-2xl text-[#161B22]",
+                          })}
+                        </Link>
+                      )}
                       {project.projectLinkonWebsite && (
                         <Link
                           className="md:w-8 md:h-8 w-6 h-6 p-2 bg-[var(--third-color)] rounded-full flex items-center justify-center"
