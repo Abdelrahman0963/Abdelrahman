@@ -94,7 +94,7 @@ const Skills: React.FC = () => {
       id="skills"
       className="w-full h-auto relative !z-0 md:!p-16 !p-5"
     >
-      <div className="cursor-no-drop w-full lg:h-full h-auto bg-[#161B22] overflow-hidden !p-8 rounded-md">
+      <div className=" w-full lg:h-full h-auto bg-[#161B22] overflow-hidden !p-8 rounded-md">
         <h1 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full text-[var(--sixth-color)]">
           Skills
         </h1>
@@ -106,7 +106,7 @@ const Skills: React.FC = () => {
               className="flex items-center justify-center gap-2 !p-5 bg-[var(--bg-color)] rounded-md"
             >
               {skill.icon}
-              <h3 className="text-[0.8rem] md:text-[1rem] text-[var(--first-color)]">
+              <h3 className="text-[0.8rem] md:text-[1rem] text-[var(--first-color)] ">
                 {skill.name}
               </h3>
             </div>
