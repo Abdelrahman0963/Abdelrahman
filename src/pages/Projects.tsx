@@ -28,7 +28,7 @@ const Projects = () => {
                     <div
 
                         key={index}
-                        className="overflow-hidden w-full px-4! bg-[#161B22] !p-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
+                        className="overflow-hidden md:w-full w-fit md:px-4! bg-[#161B22] !p-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out"
                     >
                         <div className="h-[200px]  hover:brightness-50  rounded-md">
                             <a href={project.projectLinkonWebsite}>

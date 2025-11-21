@@ -2,7 +2,7 @@ export const projects = [
     {
         projectImage: "/Projects Images/Sign in.png",
         projectName: "Cure Booking App (With Team)",
-        projectLinkonWebsite: "https://r7-react-cure-2.vercel.app/",
+        projectLinkonWebsite: "https://r7-react-cure-2-8lbg.vercel.app/",
         projectTechnologies: ["React.js", "Typescript", "ToolKit", "Shadcn UI"],
     },
     {

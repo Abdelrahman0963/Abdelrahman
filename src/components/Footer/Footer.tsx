@@ -73,9 +73,9 @@ const Footer: React.FC = () => {
             <form
               ref={formRef}
               onSubmit={sendFrom}
-              className="w-full max-w-2xl mx-auto grid gap-6"
+              className="w-full max-w-2xl md:mx-auto grid gap-6"
             >
-              <div className="relative flex gap-4">
+              <div className="relative flex flex-wrap gap-4">
                 <input
                   type="text"
                   name="FullName"
@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
                   name="Email"
                   id="Email"
                   placeholder="Email"
-                  className="w-full bg-transparent border-b-2 border-gray-500 text-[var(--third-color)] focus:outline-none focus:border-[var(--first-color)] placeholder-gray-400 py-2"
+                  className="w-full bg-transparent border-b-2 border-gray-500 text-[var(--third-color)] focus:outline-none focus:border-[var(--first-color)] placeholder-gray-400 py-2 flex-wrap"
                 />
               </div>
               <div className="relative">
