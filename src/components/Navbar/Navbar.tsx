@@ -39,9 +39,9 @@ const Navbar: React.FC = memo(function () {
     <>
       <header
         className={`
-          navbar container mx-auto bg-[#0d1117] w-full flex items-center z-50
+           mx-auto bg-[#0d1117] w-screen flex items-center z-50
           overflow-hidden
-          transition-all duration-300 ease-in-out
+          transition-all duration-300 ease-in-out 
           ${isScrolling ? "h-16  py-4! px-4! md:px-10! rounded-lg fixed md:top-2 top-0 " : "h-20 py-4!  px-8!"}
         `}
       >

@@ -1,4 +1,4 @@
-import { FaReact } from "react-icons/fa";
+import MagnetLines from '../MagnetLines';
 import { Container } from "../ui/Container";
 import { lazy } from "react";
 
@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="w-full h-[100vh] overflow-hidden bg-cover bg-center flex items-center justify-center relative"
+      className="w-full h-[85vh] overflow-hidden bg-cover bg-center flex items-center justify-center relative"
     >
       <div className="absolute -z-10 top-0 left-0 w-full h-full overflow-hidden opacity-70">
         <PixelBlast
@@ -53,9 +53,16 @@ const Hero: React.FC = () => {
           </div>
           <div className="flex flex-col items-start md:items-center justify-end md:w-auto w-full">
             <div className="md:flex w-full hidden relative">
-              <FaReact
-                size={260}
-                className="text-[var(--first-color)] opacity-70"
+
+              <MagnetLines
+                rows={8}
+                columns={8}
+                containerSize="40vmin"
+                lineColor="#efefef"
+                lineWidth="0.5vmin"
+                lineHeight="4vmin"
+                baseAngle={0}
+                style={{ margin: "2rem auto" }}
               />
             </div>
             <div className="md:mt-3 mt-10">
