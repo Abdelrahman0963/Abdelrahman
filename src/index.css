@@ -3,10 +3,14 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-html {
+
+html
+{
   scroll-behavior: smooth;
 }
-:root {
+
+:root
+{
   --bg-color: #0d1117;
   --first-color: #c498fc;
   --second-color: #7ee787;
@@ -48,19 +52,38 @@ html {
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
-* {
+
+*
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  cursor: none !important;
 }
-body {
+
+body::selection
+{
+  background-color: transparent;
+  color: transparent;
+}
+
+input,
+textarea,
+select
+{
+  cursor: text !important;
+}
+
+body
+{
   width: 100%;
   height: 100vh;
   background-color: var(--bg-color) !important;
 }
 
-@theme inline {
+@theme inline
+{
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -98,7 +121,8 @@ body {
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-.dark {
+.dark
+{
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -132,11 +156,15 @@ body {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-@layer base {
-  * {
+@layer base
+{
+  *
+  {
     @apply border-border outline-ring/50;
   }
-  body {
+
+  body
+  {
     @apply bg-background text-foreground;
   }
 }

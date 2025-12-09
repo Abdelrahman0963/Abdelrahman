@@ -13,7 +13,7 @@ export interface GooeyNavProps {
   particleR?: number;
   timeVariance?: number;
   colors?: number[];
-  initialActiveIndex?: number;
+  activeIndex?: number;
 }
 
 const GooeyNav: React.FC<GooeyNavProps> = ({
@@ -24,13 +24,17 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
   particleR = 100,
   timeVariance = 300,
   colors = [1, 2, 3, 1, 2, 3, 1, 4],
-  initialActiveIndex = 0
+  activeIndex = 0,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLUListElement>(null);
   const filterRef = useRef<HTMLSpanElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
-  const [activeIndex, setActiveIndex] = useState<number>(initialActiveIndex);
+  const [currentActiveIndex, setCurrentActiveIndex] = useState<number>(activeIndex);
+
+  useEffect(() => {
+    setCurrentActiveIndex(activeIndex);
+  }, [activeIndex]);
 
   const noise = (n = 1) => n / 2 - Math.random() * n;
   const getXY = (distance: number, pointIndex: number, totalPoints: number): [number, number] => {
@@ -97,10 +101,11 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     Object.assign(textRef.current.style, styles);
     textRef.current.innerText = element.innerText;
   };
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, index: number) => {
     const liEl = e.currentTarget;
     if (activeIndex === index) return;
-    setActiveIndex(index);
+    setCurrentActiveIndex(index);
     updateEffectPosition(liEl);
     if (filterRef.current) {
       const particles = filterRef.current.querySelectorAll('.particle');

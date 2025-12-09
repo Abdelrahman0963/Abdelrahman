@@ -1,5 +1,4 @@
 import MagnetLines from '../MagnetLines';
-import { Container } from "../ui/Container";
 import { lazy } from "react";
 
 const TextType = lazy(() => import("../TextType"));
@@ -17,6 +16,7 @@ const Hero: React.FC = () => {
       id="home"
       className="w-full h-[85vh] overflow-hidden bg-cover bg-center flex items-center justify-center relative"
     >
+
       <div className="absolute -z-10 top-0 left-0 w-full h-full overflow-hidden opacity-70">
         <PixelBlast
           variant="circle"
@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
           transparent
         />
       </div>
-      <Container className="h-full flex items-center justify-center md:px-0! px-4!">
+      <div className="w-full h-full flex items-center justify-center px-4! md:px-20!">
         <div className="w-full h-full md:h-auto text-white flex-col md:flex-row flex items-center justify-center md:justify-between md:!mb-0 !mb-10">
           <div className="home-content w-full">
             <h2 className="xl:text-8xl lg:text-7xl text-5xl font-[var(--font-Kanit)] leading-[1.1]">
@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
           </div>
 
         </div>
-      </Container>
+      </div>
     </section>
   );
 };

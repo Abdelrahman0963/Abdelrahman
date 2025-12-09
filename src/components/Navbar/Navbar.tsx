@@ -19,6 +19,7 @@ const navbarLinks: GooeyNavItem[] = [
 const Navbar: React.FC = memo(function () {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
 
   const handleScroll = useCallback(() => {
@@ -35,6 +36,34 @@ const Navbar: React.FC = memo(function () {
     setIsOpen(false);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const y = window.scrollY;
+      setScrollY(y);
+      setIsScrolling(y > 30);
+
+      if (y < 600) {
+        setActiveIndex(0);
+      } else if (y < 1100) {
+        setActiveIndex(1);
+      } else if (y < 1800) {
+        setActiveIndex(2);
+      } else if (y < 2200) {
+        setActiveIndex(3);
+      } else {
+        setActiveIndex(4);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    console.log("scrollY", scrollY);
+    console.log("activeIndex", activeIndex);
+  }, [scrollY]);
+
   return (
     <>
       <header
@@ -42,7 +71,7 @@ const Navbar: React.FC = memo(function () {
            mx-auto bg-[#0d1117] w-screen flex items-center z-50
           overflow-hidden
           transition-all duration-300 ease-in-out 
-          ${isScrolling ? "h-16  py-4! px-4! md:px-10! rounded-lg fixed md:top-2 top-0 " : "h-20 py-4!  px-8!"}
+          ${isScrolling ? "h-16  py-4! px-4! md:px-20! rounded-lg fixed md:top-2 top-0 " : "h-20 py-4! px-4! md:px-20!"}
         `}
       >
         <div className="navbar-container relative flex items-center w-full justify-between">
@@ -56,7 +85,7 @@ const Navbar: React.FC = memo(function () {
               particleCount={10}
               particleDistances={[60, 10]}
               particleR={70}
-              initialActiveIndex={0}
+              activeIndex={activeIndex}   // ← الحل
               animationTime={450}
               timeVariance={250}
               colors={[1, 2, 3, 2, 3]}
