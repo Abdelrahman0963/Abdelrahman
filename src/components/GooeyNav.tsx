@@ -30,7 +30,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
   const navRef = useRef<HTMLUListElement>(null);
   const filterRef = useRef<HTMLSpanElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
-  const [currentActiveIndex, setCurrentActiveIndex] = useState<number>(activeIndex);
+  const [, setCurrentActiveIndex] = useState<number>(activeIndex);
 
   useEffect(() => {
     setCurrentActiveIndex(activeIndex);

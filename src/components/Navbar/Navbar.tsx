@@ -19,7 +19,7 @@ const navbarLinks: GooeyNavItem[] = [
 const Navbar: React.FC = memo(function () {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+  const [, setScrollY] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
 
   const handleScroll = useCallback(() => {
@@ -59,10 +59,6 @@ const Navbar: React.FC = memo(function () {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    console.log("scrollY", scrollY);
-    console.log("activeIndex", activeIndex);
-  }, [scrollY]);
 
   return (
     <>
