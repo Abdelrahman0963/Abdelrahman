@@ -1,10 +1,24 @@
 import React, { type ReactNode } from "react";
-import { IoIosTimer, IoLogoHtml5 } from "react-icons/io";
-import { FaBootstrap, FaCss3, FaGithub, FaJs } from "react-icons/fa";
+import { motion, type Variants } from "framer-motion";
+import {
+  IoIosTimer,
+  IoLogoHtml5,
+} from "react-icons/io";
+import {
+  FaBootstrap,
+  FaCss3,
+  FaGithub,
+  FaJs,
+} from "react-icons/fa";
 import { RiBearSmileFill, RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion } from "react-icons/tb";
-import { SiNextdotjs, SiReactquery, SiRedux, SiShadcnui, SiTypescript } from "react-icons/si";
-
+import {
+  SiNextdotjs,
+  SiReactquery,
+  SiRedux,
+  SiShadcnui,
+  SiTypescript,
+} from "react-icons/si";
 import { IoLogoReact } from "react-icons/io5";
 import { FiFigma } from "react-icons/fi";
 import { FaGear } from "react-icons/fa6";
@@ -15,104 +29,92 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  {
-    name: "HTML",
-    icon: <IoLogoHtml5 className="text-4xl text-[var(--first-color)]" />,
-  },
-  {
-    name: "CSS",
-    icon: <FaCss3 className="text-4xl text-[var(--first-color)]" />,
-  },
-  {
-    name: "Bootstrap",
-    icon: <FaBootstrap className="text-4xl text-[var(--first-color)]" />,
-  },
-  {
-    name: "Tailwind",
-    icon: <RiTailwindCssFill className="text-4xl text-[var(--first-color)]" />,
-  },
-  {
-    name: "Figma",
-    icon: <FiFigma className="text-4xl text-[var(--first-color)]" />,
-  },
-  {
-    name: "Shadcn UI",
-    icon: <SiShadcnui className="text-3xl text-[var(--first-color)]" />
-
-  },
-  {
-    name: "Framer Motion",
-    icon: (
-      <TbBrandFramerMotion className="text-4xl text-[var(--first-color)]" />
-    ),
-  },
-  {
-    name: "JavaScript",
-    icon: <FaJs className="text-4xl text-[var(--first-color)]" />,
-  },
-  {
-    name: "TypeScript",
-    icon: <SiTypescript className="text-4xl text-[var(--first-color)]" />,
-  },
-  {
-    name: "React",
-    icon: <IoLogoReact className="text-4xl text-[var(--first-color)]" />,
-  },
-  {
-    name: "Zustand",
-    icon: <RiBearSmileFill className="text-4xl text-[var(--first-color)]" />,
-  },
-  {
-    name: "redux toolkit",
-    icon: <SiRedux className="text-4xl text-[var(--first-color)]" />,
-  },
-  {
-    name: "React Query",
-    icon: <SiReactquery className="text-4xl text-[var(--first-color)]" />,
-  },
-  {
-    name: "API",
-    icon: <FaGear className="text-4xl text-[var(--first-color)]" />,
-  },
-  {
-    name: "GitHub",
-    icon: <FaGithub className="text-4xl text-[var(--first-color)]" />,
-  },
-  {
-    name: "Next.js",
-    icon: <SiNextdotjs className="text-4xl text-[var(--first-color)]" />,
-  },
-  {
-    name: "More coming soon...",
-    icon: <IoIosTimer className="text-4xl text-[var(--first-color)]" />,
-  },
+  { name: "HTML", icon: <IoLogoHtml5 /> },
+  { name: "CSS", icon: <FaCss3 /> },
+  { name: "Bootstrap", icon: <FaBootstrap /> },
+  { name: "Tailwind", icon: <RiTailwindCssFill /> },
+  { name: "Figma", icon: <FiFigma /> },
+  { name: "Shadcn UI", icon: <SiShadcnui /> },
+  { name: "Framer Motion", icon: <TbBrandFramerMotion /> },
+  { name: "JavaScript", icon: <FaJs /> },
+  { name: "TypeScript", icon: <SiTypescript /> },
+  { name: "React", icon: <IoLogoReact /> },
+  { name: "Zustand", icon: <RiBearSmileFill /> },
+  { name: "Redux Toolkit", icon: <SiRedux /> },
+  { name: "React Query", icon: <SiReactquery /> },
+  { name: "API", icon: <FaGear /> },
+  { name: "GitHub", icon: <FaGithub /> },
+  { name: "Next.js", icon: <SiNextdotjs /> },
+  { name: "More coming soon...", icon: <IoIosTimer /> },
 ];
+
+const container: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.07,
+    },
+  },
+};
+
+const card: Variants = {
+  hidden: { opacity: 0, y: 30, scale: 0.96 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 const Skills: React.FC = () => {
   return (
-    <section
-      id="skills"
-      className="w-full h-auto relative !z-0 md:!p-16 !p-5"
-    >
-      <div className=" w-full lg:h-full h-auto bg-[#161B22] overflow-hidden !p-8 rounded-md">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl lg:w-1/2 w-full text-[var(--sixth-color)]">
+    <section id="skills" className="w-full py-20! px-5! md:px-16!">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="w-full bg-[#161B22] rounded-2xl p-8! md:p-12! border border-white/10 shadow-xl"
+      >
+        <h2 className="text-3xl md:text-4xl text-[var(--sixth-color)] mb-10!">
           Skills
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 md:!p-5 !py-3">
+        </h2>
 
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5"
+        >
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={index}
-              className="flex items-center justify-center gap-2 !p-5 bg-[var(--bg-color)] rounded-md"
+              variants={card}
+              whileHover={{ y: -6, scale: 1.03 }}
+              className="group relative flex flex-col items-center justify-center
+              gap-3 p-6! rounded-xl
+              bg-[#0d1117]/80 backdrop-blur
+              border border-white/10
+              text-center cursor-default
+              transition-all duration-300
+              hover:border-purple-500/40 hover:shadow-purple-500/20 hover:shadow-xl"
             >
-              {skill.icon}
-              <h3 className="text-[0.8rem] md:text-[1rem] text-[var(--first-color)] ">
+              <div className="text-4xl text-[var(--first-color)] group-hover:scale-110 transition">
+                {skill.icon}
+              </div>
+
+              <h3 className="text-sm md:text-base text-white/80 group-hover:text-white">
                 {skill.name}
               </h3>
-            </div>
+
+              {/* Glow */}
+              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-purple-500/10 to-blue-500/10 blur-xl" />
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

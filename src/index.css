@@ -59,7 +59,6 @@ html
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  cursor: none !important;
 }
 
 body::selection
@@ -68,12 +67,6 @@ body::selection
   color: transparent;
 }
 
-input,
-textarea,
-select
-{
-  cursor: text !important;
-}
 
 body
 {
