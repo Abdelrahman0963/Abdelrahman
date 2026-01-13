@@ -4,7 +4,6 @@ const LoadingScreen = () => {
     return (
         <div className="fixed inset-0 z-[999] bg-[var(--bg-color)] flex items-center justify-center overflow-hidden">
 
-            {/* Glow Background */}
             <div className="absolute w-[600px] h-[600px] bg-purple-600/20 blur-[120px] rounded-full animate-pulse" />
 
             <motion.div
