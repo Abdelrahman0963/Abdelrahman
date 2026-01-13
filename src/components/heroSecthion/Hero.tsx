@@ -1,27 +1,8 @@
-import { motion, type Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { lazy } from "react";
 
 const PixelBlast = lazy(() => import("../PixelBlast"));
 
-const container: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const item: Variants = {
-  hidden: { opacity: 0, y: 50 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.9, ease: "easeOut" },
-  },
-};
 
 const Hero: React.FC = () => {
   const DownloadPDF = (): void => {
@@ -56,21 +37,24 @@ const Hero: React.FC = () => {
           transparent
         />
       </div>
-      <motion.div
-        initial={{ scale: 0.6, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+      <div
         className="w-full max-w-7xl px-6! md:px-20! flex items-center justify-center"
       >
         <div className="w-full flex flex-col items-center text-center text-white gap-6 md:gap-8">
 
-          <p
+          <motion.p
+            initial={{ scale: 0.6, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             className="text-[var(--first-color)] text-3xl tracking-wide"
           >
             Hi, I’m
-          </p>
+          </motion.p>
 
-          <h1
+          <motion.h1
+            initial={{ scale: 0.6, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
             className="font-[var(--font-Kanit)]
             text-5xl
             md:text-7xl
@@ -80,9 +64,12 @@ const Hero: React.FC = () => {
             drop-shadow-xl"
           >
             Abdelrahman Sayed
-          </h1>
+          </motion.h1>
 
-          <h2
+          <motion.h2
+            initial={{ scale: 0.6, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
             className="text-[var(--first-color)]
             text-xl
             md:text-3xl
@@ -91,18 +78,26 @@ const Hero: React.FC = () => {
             tracking-widest uppercase"
           >
             Frontend Developer
-          </h2>
-          <p
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
             className="max-w-2xl text-white/70 text-base md:text-lg leading-relaxed px-4"
           >
             I craft beautiful, responsive, and interactive web experiences with modern technologies.
             Specializing in React, TypeScript, and seamless UI design.
-          </p>
+          </motion.p>
 
           <div
             className="mt-10 flex flex-col sm:flex-row items-center gap-5"
           >
-            <button
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.6, ease: "easeOut" }}
               onClick={DownloadPDF}
               className="group relative inline-flex items-center justify-center
               w-[220px] h-12 px-6 text-sm font-semibold text-white
@@ -111,9 +106,14 @@ const Hero: React.FC = () => {
               shadow-lg hover:shadow-purple-500/40"
             >
               Download CV
-            </button>
+            </motion.button>
 
-            <button
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.8, ease: "easeOut" }}
               onClick={scrollToPortfolio}
               className="group relative inline-flex items-center justify-center
               w-[220px] h-12 px-6 text-sm font-semibold
@@ -122,11 +122,11 @@ const Hero: React.FC = () => {
               transition-all duration-300 hover:bg-white/5"
             >
               View Portfolio
-            </button>
+            </motion.button>
           </div>
 
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
