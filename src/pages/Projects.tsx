@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { projects } from "../server/projects";
@@ -18,9 +18,13 @@ const Projects: React.FC = () => {
 
     const yValue = reduceMotion ? 0 : 30;
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
-        <section className="min-h-screen w-full bg-[var(--bg-color)] pt-28 pb-24">
-            <div className="w-full mx-auto px-6 md:px-12">
+        <section className="min-h-screen w-full bg-[var(--bg-color)] pt-28! pb-24!">
+            <div className="w-full mx-auto px-6! md:px-12!">
 
                 {/* Header */}
                 <motion.div
@@ -28,7 +32,7 @@ const Projects: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex items-center gap-4 mb-16"
+                    className="flex items-center gap-4! mb-16!"
                 >
                     <Link
                         to="/"
@@ -43,7 +47,6 @@ const Projects: React.FC = () => {
                     </h1>
                 </motion.div>
 
-                {/* Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {project.map((project, index) => (
                         <motion.div
@@ -54,7 +57,6 @@ const Projects: React.FC = () => {
                             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                             className="group relative overflow-hidden rounded-2xl bg-[#161B22] border border-white/10 hover:border-purple-500/40 transition"
                         >
-                            {/* Image */}
                             <div className="relative h-[240px] overflow-hidden">
                                 <img
                                     loading="lazy"
@@ -65,13 +67,13 @@ const Projects: React.FC = () => {
 
                                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition" />
 
-                                {/* Buttons */}
+                                {/* Actions */}
                                 <div className="absolute bottom-5 left-5 right-5 flex gap-4 opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition">
                                     {project.projectLinkonWebsite && (
                                         <Link
                                             to={project.projectLinkonWebsite}
                                             target="_blank"
-                                            className="flex-1 text-center py-2 rounded-lg bg-white text-black font-medium hover:bg-white/90"
+                                            className="flex-1 text-center py-2! rounded-lg bg-white text-black font-medium hover:bg-white/90"
                                         >
                                             Live Demo
                                         </Link>
@@ -80,7 +82,7 @@ const Projects: React.FC = () => {
                                         <Link
                                             to={project.projectLinkonGithub}
                                             target="_blank"
-                                            className="flex-1 text-center py-2 rounded-lg border border-white text-white hover:bg-white hover:text-black transition"
+                                            className="flex-1 text-center py-2! rounded-lg border border-white text-white hover:bg-white hover:text-black transition"
                                         >
                                             Source Code
                                         </Link>
@@ -89,7 +91,7 @@ const Projects: React.FC = () => {
                             </div>
 
                             {/* Content */}
-                            <div className="p-6 flex flex-col gap-4">
+                            <div className="p-6! flex flex-col gap-4">
                                 <h3 className="text-xl text-white font-semibold">
                                     {project.projectName}
                                 </h3>
@@ -98,7 +100,7 @@ const Projects: React.FC = () => {
                                     {project.projectTechnologies.map((tech, i) => (
                                         <span
                                             key={i}
-                                            className="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/70"
+                                            className="text-xs px-3! py-1! rounded-full bg-white/5 border border-white/10 text-white/70"
                                         >
                                             {tech}
                                         </span>
@@ -106,7 +108,7 @@ const Projects: React.FC = () => {
                                 </div>
                             </div>
 
-                            {/* Glow – desktop only */}
+                            {/* Soft glow (desktop only) */}
                             <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition pointer-events-none bg-gradient-to-br from-purple-500/10 to-blue-500/10 blur-lg hidden md:block" />
                         </motion.div>
                     ))}
