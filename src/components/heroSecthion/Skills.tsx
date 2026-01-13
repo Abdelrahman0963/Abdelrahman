@@ -1,5 +1,5 @@
 import React, { type ReactNode } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   IoIosTimer,
   IoLogoHtml5,
@@ -50,6 +50,9 @@ const skills: Skill[] = [
 
 
 const Skills: React.FC = () => {
+  const reduceMotion = useReducedMotion();
+
+  const yValue = reduceMotion ? 0 : 30;
   return (
     <section id="skills" className="w-full py-20! px-5! md:px-16!">
       <motion.div
@@ -68,10 +71,10 @@ const Skills: React.FC = () => {
         >
           {skills.map((skill, index) => (
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: yValue }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
               key={index}
               whileHover={{ y: -6, scale: 1.03 }}
               className="group relative flex flex-col items-center justify-center
