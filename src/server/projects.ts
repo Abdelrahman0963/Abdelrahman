@@ -31,6 +31,6 @@ export const projects = [
         projectImage: "/Projects Images/Massar.png",
         projectName: "Massar Tech website",
         projectLinkonWebsite: "https://massar-five.vercel.app//",
-        projectTechnologies: ["React.js", "Typescript", "Shadcn UI", "Tailwind CSS", "Framer Motion"],
+        projectTechnologies: ["React.js", "React-i18next", "Typescript", "Shadcn UI", "Tailwind CSS", "Framer Motion"],
     }
 ]
