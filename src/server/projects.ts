@@ -27,4 +27,10 @@ export const projects = [
             "https://abdelrahman0963.github.io/CRUD-Operation--System/",
         projectTechnologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     },
+    {
+        projectImage: "/Projects Images/Massar.png",
+        projectName: "Massar Tech website",
+        projectLinkonWebsite: "https://massar-five.vercel.app//",
+        projectTechnologies: ["React.js", "Typescript", "Shadcn UI", "Tailwind CSS", "Framer Motion"],
+    }
 ]
