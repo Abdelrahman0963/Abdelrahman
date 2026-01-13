@@ -1,5 +1,5 @@
 import React, { type ReactNode } from "react";
-import { motion, type Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   IoIosTimer,
   IoLogoHtml5,
@@ -48,24 +48,6 @@ const skills: Skill[] = [
   { name: "More coming soon...", icon: <IoIosTimer /> },
 ];
 
-const container: Variants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.07,
-    },
-  },
-};
-
-const card: Variants = {
-  hidden: { opacity: 0, y: 30, scale: 0.96 },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
 
 const Skills: React.FC = () => {
   return (
@@ -81,17 +63,16 @@ const Skills: React.FC = () => {
           Skills
         </h2>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
+        <div
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5"
         >
           {skills.map((skill, index) => (
             <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
               key={index}
-              variants={card}
               whileHover={{ y: -6, scale: 1.03 }}
               className="group relative flex flex-col items-center justify-center
               gap-3 p-6! rounded-xl
@@ -113,7 +94,7 @@ const Skills: React.FC = () => {
               <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-purple-500/10 to-blue-500/10 blur-xl" />
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );
