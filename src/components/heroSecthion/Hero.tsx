@@ -41,7 +41,6 @@ const Hero: React.FC = () => {
       id="home"
       className="relative w-full h-screen overflow-hidden flex items-center justify-center"
     >
-      {/* Background */}
       <div className="absolute inset-0 -z-10 opacity-60">
         <PixelBlast
           variant="circle"
@@ -57,24 +56,21 @@ const Hero: React.FC = () => {
           transparent
         />
       </div>
-
       <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
+        initial={{ scale: 0.6, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
         className="w-full max-w-7xl px-6! md:px-20! flex items-center justify-center"
       >
         <div className="w-full flex flex-col items-center text-center text-white gap-6 md:gap-8">
 
-          <motion.p
-            variants={item}
+          <p
             className="text-[var(--first-color)] text-3xl tracking-wide"
           >
             Hi, I’m
-          </motion.p>
+          </p>
 
-          <motion.h1
-            variants={item}
+          <h1
             className="font-[var(--font-Kanit)]
             text-5xl
             md:text-7xl
@@ -84,10 +80,9 @@ const Hero: React.FC = () => {
             drop-shadow-xl"
           >
             Abdelrahman Sayed
-          </motion.h1>
+          </h1>
 
-          <motion.h2
-            variants={item}
+          <h2
             className="text-[var(--first-color)]
             text-xl
             md:text-3xl
@@ -96,18 +91,15 @@ const Hero: React.FC = () => {
             tracking-widest uppercase"
           >
             Frontend Developer
-          </motion.h2>
-
-          <motion.p
-            variants={item}
+          </h2>
+          <p
             className="max-w-2xl text-white/70 text-base md:text-lg leading-relaxed px-4"
           >
             I craft beautiful, responsive, and interactive web experiences with modern technologies.
             Specializing in React, TypeScript, and seamless UI design.
-          </motion.p>
+          </p>
 
-          <motion.div
-            variants={item}
+          <div
             className="mt-10 flex flex-col sm:flex-row items-center gap-5"
           >
             <button
@@ -131,7 +123,7 @@ const Hero: React.FC = () => {
             >
               View Portfolio
             </button>
-          </motion.div>
+          </div>
 
         </div>
       </motion.div>

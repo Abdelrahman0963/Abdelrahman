@@ -38,7 +38,7 @@ const Navbar: React.FC = memo(function () {
   return (
     <>
       <motion.header
-        initial={{ y: -80 }}
+        initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
         className="
