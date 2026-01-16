@@ -48,17 +48,16 @@ const skills: Skill[] = [
   { name: "More coming soon...", icon: <IoIosTimer /> },
 ];
 
-
 const Skills: React.FC = () => {
   const reduceMotion = useReducedMotion();
+  const yValue = reduceMotion ? 0 : 24;
 
-  const yValue = reduceMotion ? 0 : 30;
   return (
     <section id="skills" className="w-full py-20! px-5! md:px-16!">
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
         className="w-full bg-[#161B22] rounded-2xl p-8! md:p-12! border border-white/10 shadow-xl"
       >
@@ -66,16 +65,18 @@ const Skills: React.FC = () => {
           Skills
         </h2>
 
-        <div
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5"
-        >
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
           {skills.map((skill, index) => (
             <motion.div
+              key={index}
               initial={{ opacity: 0, y: yValue }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
-              key={index}
+              transition={{
+                duration: 0.35,
+                ease: [0.16, 1, 0.3, 1],
+                delay: index * 0.04,
+              }}
               whileHover={{ y: -6, scale: 1.03 }}
               className="group relative flex flex-col items-center justify-center
               gap-3 p-6! rounded-xl
@@ -93,7 +94,6 @@ const Skills: React.FC = () => {
                 {skill.name}
               </h3>
 
-              {/* Glow */}
               <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition bg-gradient-to-br from-purple-500/10 to-blue-500/10 blur-xl" />
             </motion.div>
           ))}

@@ -16,7 +16,7 @@ const Projects: React.FC = () => {
     const project: projectsprops[] = projects;
     const reduceMotion = useReducedMotion();
 
-    const yValue = reduceMotion ? 0 : 30;
+    const yValue = reduceMotion ? 0 : 24;
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -31,7 +31,10 @@ const Projects: React.FC = () => {
                     initial={{ opacity: 0, y: -yValue }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{
+                        duration: 0.45,
+                        ease: [0.16, 1, 0.3, 1],
+                    }}
                     className="flex items-center gap-4! mb-16!"
                 >
                     <Link
@@ -54,7 +57,11 @@ const Projects: React.FC = () => {
                             initial={{ opacity: 0, y: yValue }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-60px" }}
-                            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                            transition={{
+                                duration: 0.45,
+                                ease: [0.16, 1, 0.3, 1],
+                                delay: reduceMotion ? 0 : index * 0.06,
+                            }}
                             className="group relative overflow-hidden rounded-2xl bg-[#161B22] border border-white/10 hover:border-purple-500/40 transition"
                         >
                             <div className="relative h-[240px] overflow-hidden">
@@ -108,12 +115,11 @@ const Projects: React.FC = () => {
                                 </div>
                             </div>
 
-                            {/* Soft glow (desktop only) */}
+                            {/* Soft glow */}
                             <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition pointer-events-none bg-gradient-to-br from-purple-500/10 to-blue-500/10 blur-lg hidden md:block" />
                         </motion.div>
                     ))}
                 </div>
-
             </div>
         </section>
     );

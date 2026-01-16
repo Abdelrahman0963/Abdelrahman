@@ -15,8 +15,6 @@ const About = () => {
     >
       <div className="mx-auto w-full px-6! md:px-16! py-24!">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-
-          {/* Image */}
           <motion.div
             initial={{ opacity: 0, y: yValue }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -25,11 +23,9 @@ const About = () => {
             className="flex justify-center"
           >
             <div className="relative">
-              {/* Glow only on desktop */}
               <div className="absolute -inset-4 bg-[var(--second-color)]/10 blur-xl hidden md:block rounded-2xl" />
 
               <div className="relative">
-                {/* Mobile – no ElectricBorder */}
                 <div className="block md:hidden rounded-xl overflow-hidden border border-[var(--second-color)]/40">
                   <img
                     src="/Images/Porfile.jpeg"
@@ -39,7 +35,6 @@ const About = () => {
                   />
                 </div>
 
-                {/* Desktop – ElectricBorder */}
                 <div className="hidden md:block">
                   <ElectricBorder
                     color="#7ee787"

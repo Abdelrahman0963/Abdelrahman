@@ -10,11 +10,11 @@ interface GooeyNavItem {
 }
 
 const navbarLinks: GooeyNavItem[] = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const Navbar: React.FC = memo(function () {
@@ -40,7 +40,7 @@ const Navbar: React.FC = memo(function () {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
+        transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98], delay: 0.2 }}
         className="
           fixed top-0 left-0 right-0 z-50
           bg-[#0d1117]/40 backdrop-blur-xl
@@ -48,19 +48,13 @@ const Navbar: React.FC = memo(function () {
         "
       >
         <div className="h-[4.5rem] flex items-center justify-between px-6! md:px-20!">
-
-          {/* Logo - Left */}
           <img
             src={img}
             className="w-32 md:w-36 h-auto"
             alt="logo"
             loading="eager"
           />
-
-          {/* Right Side (Nav + Mobile Icon) */}
           <div className="flex items-center gap-6">
-
-            {/* Desktop GooeyNav */}
             <nav className="hidden md:flex items-center h-full">
               <GooeyNav
                 items={navbarLinks}
@@ -73,8 +67,6 @@ const Navbar: React.FC = memo(function () {
                 colors={[1, 2, 3, 2, 3]}
               />
             </nav>
-
-            {/* Mobile Toggle */}
             <div className="flex md:hidden">
               {isOpen ? (
                 <LuPanelTopClose

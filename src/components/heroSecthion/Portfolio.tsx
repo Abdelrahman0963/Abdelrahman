@@ -24,6 +24,7 @@ const Portfolio: React.FC = () => {
     >
       <div className="w-full mx-auto px-6! md:px-12!">
 
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: yValue }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +48,11 @@ const Portfolio: React.FC = () => {
               initial={{ opacity: 0, y: yValue }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.45,
+                ease: [0.16, 1, 0.3, 1],
+                delay: index * 0.08,
+              }}
               className="group relative overflow-hidden rounded-2xl bg-[#161B22] border border-white/10 hover:border-purple-500/40 transition"
             >
               {/* Image */}
@@ -102,7 +107,7 @@ const Portfolio: React.FC = () => {
                 </div>
               </div>
 
-              {/* Soft glow (desktop only) */}
+              {/* Glow */}
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition pointer-events-none bg-gradient-to-br from-purple-500/10 to-blue-500/10 blur-lg hidden md:block" />
             </motion.div>
           ))}

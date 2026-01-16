@@ -3,7 +3,6 @@ import { lazy } from "react";
 
 const PixelBlast = lazy(() => import("../PixelBlast"));
 
-
 const Hero: React.FC = () => {
   const DownloadPDF = (): void => {
     const link = document.createElement("a");
@@ -37,9 +36,8 @@ const Hero: React.FC = () => {
           transparent
         />
       </div>
-      <div
-        className="w-full max-w-7xl px-6! md:px-20! flex items-center justify-center"
-      >
+
+      <div className="w-full max-w-7xl px-6! md:px-20! flex items-center justify-center">
         <div className="w-full flex flex-col items-center text-center text-white gap-6 md:gap-8">
 
           <motion.p
@@ -54,7 +52,7 @@ const Hero: React.FC = () => {
           <motion.h1
             initial={{ scale: 0.6, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
             className="font-[var(--font-Kanit)]
             text-5xl
             md:text-7xl
@@ -69,7 +67,7 @@ const Hero: React.FC = () => {
           <motion.h2
             initial={{ scale: 0.6, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
             className="text-[var(--first-color)]
             text-xl
             md:text-3xl
@@ -79,25 +77,24 @@ const Hero: React.FC = () => {
           >
             Frontend Developer
           </motion.h2>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.4, delay: 0.65, ease: "easeOut" }}
             className="max-w-2xl text-white/70 text-base md:text-lg leading-relaxed px-4"
           >
             I craft beautiful, responsive, and interactive web experiences with modern technologies.
             Specializing in React, TypeScript, and seamless UI design.
           </motion.p>
 
-          <div
-            className="mt-10 flex flex-col sm:flex-row items-center gap-5"
-          >
+          <div className="mt-10 flex flex-col sm:flex-row items-center gap-5">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.6, ease: "easeOut" }}
+              transition={{ duration: 0.4, delay: 0.8, ease: "easeOut" }}
               onClick={DownloadPDF}
               className="group relative inline-flex items-center justify-center
               w-[220px] h-12 px-6 text-sm font-semibold text-white
@@ -113,7 +110,7 @@ const Hero: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.4, delay: 0.9, ease: "easeOut" }}
               onClick={scrollToPortfolio}
               className="group relative inline-flex items-center justify-center
               w-[220px] h-12 px-6 text-sm font-semibold
