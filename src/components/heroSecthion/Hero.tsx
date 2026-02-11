@@ -102,11 +102,11 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.8, ease: "easeOut" }}
               onClick={DownloadPDF}
-              className="group relative inline-flex items-center justify-center
+              className={`group ${loding ? "cursor-pointer" :"cursor-progress" } relative inline-flex items-center justify-center
               w-[220px] h-12 px-6 text-sm font-semibold text-white
               rounded-xl bg-gradient-to-br from-purple-600 to-blue-500
               hover:scale-[0.96] transition-all duration-300
-              shadow-lg hover:shadow-purple-500/40"
+              shadow-lg hover:shadow-purple-500/40`}
             >
               {loding ? "Downloading..." : "Download Resume"}
             </motion.button>
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.9, ease: "easeOut" }}
               onClick={scrollToPortfolio}
-              className="group relative inline-flex items-center justify-center
+              className="group relative cursor-pointer inline-flex items-center justify-center
               w-[220px] h-12 px-6 text-sm font-semibold
               rounded-xl border border-white/20 text-white/90
               hover:text-white hover:border-white
