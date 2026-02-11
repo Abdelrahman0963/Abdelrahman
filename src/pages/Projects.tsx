@@ -114,8 +114,6 @@ const Projects: React.FC = () => {
                                     ))}
                                 </div>
                             </div>
-
-                            {/* Soft glow */}
                             <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition pointer-events-none bg-gradient-to-br from-purple-500/10 to-blue-500/10 blur-lg hidden md:block" />
                         </motion.div>
                     ))}

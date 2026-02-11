@@ -1,14 +1,19 @@
 import { motion } from "framer-motion";
-import { lazy } from "react";
+import React, { lazy } from "react";
 
 const PixelBlast = lazy(() => import("../PixelBlast"));
 
 const Hero: React.FC = () => {
+  const [loding, setLoding] = React.useState(false);
   const DownloadPDF = (): void => {
     const link = document.createElement("a");
     link.href = "/Resume/AbdelrahmanSayed-Resume.pdf";
     link.download = "AbdelrahmanSayed-Resume.pdf";
     link.click();
+    setLoding(true);
+    setTimeout(() => {
+      setLoding(false);
+    }, 2000);
   };
 
   const scrollToPortfolio = (): void => {
@@ -90,6 +95,7 @@ const Hero: React.FC = () => {
 
           <div className="mt-10 flex flex-col sm:flex-row items-center gap-5">
             <motion.button
+              disabled={loding}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
@@ -102,7 +108,7 @@ const Hero: React.FC = () => {
               hover:scale-[0.96] transition-all duration-300
               shadow-lg hover:shadow-purple-500/40"
             >
-              Download CV
+              {loding ? "Downloading..." : "Download Resume"}
             </motion.button>
 
             <motion.button

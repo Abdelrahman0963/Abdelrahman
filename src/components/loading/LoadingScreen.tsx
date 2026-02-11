@@ -12,7 +12,6 @@ const LoadingScreen = () => {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative flex flex-col items-center gap-10!"
             >
-                {/* Logo */}
                 <motion.img
                     src="/Logo/logo.png"
                     alt="logo"
